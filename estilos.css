@@ -1,0 +1,210 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  display: block; /* ← elimina el centrado vertical */
+  background: #f5f5f5;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 230px 12px 12px; /* ← ahora con 12px arriba */
+  box-sizing: border-box;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.search-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  max-width: 420px;
+  justify-content: flex-start;
+  margin-top: 0; /* ← asegurarse que no haya margen extra */
+}
+
+.search-block input {
+  width: 100%;
+  padding: 14px 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 17px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.search-block button,
+.btn-clear {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 17px;
+  font-weight: 600;
+  background-color: #04a49c;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-block button:hover,
+.btn-clear:hover {
+  background-color: #000000;
+}
+
+#resultados {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0 0 0; /* ← separa desde arriba */
+  width: 100%;
+  max-height: 180px;
+  overflow-y: auto;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+
+#resultados li {
+  padding: 10px;
+  background-color: #f1f1f1;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#resultados li:hover {
+  background-color: #e0e0e0;
+}
+
+.floor-output {
+  font-weight: 600;
+  color: #04a49c;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.btn-main {
+  padding: 14px 24px;
+  font-size: 18px;
+  background-color: #04a49c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-main:hover {
+  background-color: #000000;
+}
+
+a.admin-btn,
+a.floor-btn {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: #04a49c;
+  color: #ffffff;
+  transition: background 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+a.admin-btn {
+  width: 100%;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+a.admin-btn:hover,
+a.floor-btn:hover {
+  background-color: #000000;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 350px;
+  padding: 40px 24px 30px 24px;
+  z-index: 999;
+}
+
+.modal.show {
+  display: block;
+}
+
+.modal .title {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.modal button {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background-color: #04a49c;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modal button:hover {
+  background-color: #000000;
+}
+
+.modal .admin-btn {
+  width: 100%;
+  background-color: #04a49c;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 998;
+}
+
+.overlay.show {
+  display: block;
+}

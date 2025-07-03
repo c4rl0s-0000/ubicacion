@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscar Área</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <div class="main-container">
+    <div class="search-block">
+      <input type="text" id="areaInput" placeholder="Buscar área..." oninput="filtrarAreas()">
+      <button class="btn-main" onclick="openModal()">Buscar Piso</button>
+      <button class="btn-clear" onclick="borrarResultados()">Borrar resultados</button>
+    </div>
+  
+    <ul id="resultados"></ul>
+    <div id="pisoResultado" class="floor-output"></div>
+    </div>
+  
+  <div class="overlay" id="overlay" onclick="closeModal()"></div>
+  
+  <div class="modal" id="floorModal">
+    <a href="administrativa.html" class="admin-btn">Área Administrativa</a>
+    <div class="button-grid">
+      <a href="Piso1.html" class="floor-btn">Piso 1</a>
+      <a href="Piso2.html" class="floor-btn">Piso 2</a>
+      <a href="Piso3.html" class="floor-btn">Piso 3</a>
+      <a href="Piso4.html" class="floor-btn">Piso 4</a>
+      <a href="Piso5.html" class="floor-btn">Piso 5</a>
+      <a href="Piso6.html" class="floor-btn">Piso 6</a>
+    </div>
+  </div>
+  
+
+
+  <script>
+    function openModal() {
+      document.getElementById('floorModal').classList.add('show');
+      document.getElementById('overlay').classList.add('show');
+    }
+
+    function closeModal() {
+      document.getElementById('floorModal').classList.remove('show');
+      document.getElementById('overlay').classList.remove('show');
+    }
+  </script>
+
+</body>
+</html>
+
+<script src="busqueda.js"></script>
+
